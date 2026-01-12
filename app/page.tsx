@@ -111,7 +111,7 @@ export default function MathTutoringLanding() {
           <p className="text-lg font-semibold mb-3">
             💬 WhatsApp:{' '}
             <a
-              href="https://wa.me/27822630913"
+              href="https://wa.me/27813454248"
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-600 hover:underline"
