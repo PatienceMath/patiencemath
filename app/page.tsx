@@ -13,8 +13,9 @@ export default function MathTutoringLanding() {
     'https://wa.me/27822630913?text=Hi%20I%20would%20like%20to%20enquire%20about%20Grade%2012%20Math%20tutoring';
 
   return (
-    <main className="min-h-screen p-6 bg-gradient-to-br from-indigo-100 to-blue-100">
-      {/* WhatsApp */}
+    <main className="min-h-screen bg-gradient-to-br from-indigo-100 to-blue-100 flex flex-col">
+      
+      {/* WhatsApp Floating Button */}
       <a
         href={whatsappLink}
         target="_blank"
@@ -24,27 +25,22 @@ export default function MathTutoringLanding() {
         💬 WhatsApp
       </a>
 
-      {/* Header */}
-      <div className="max-w-5xl mx-auto text-center mb-12">
+      {/* HEADER */}
+      <div className="max-w-5xl mx-auto text-center mt-16 mb-12 px-4">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl font-extrabold text-indigo-700 mb-4"
+          className="text-4xl md:text-5xl font-extrabold text-indigo-700 mb-4"
         >
-        Math Tutoring
+          Math Tutoring
         </motion.h1>
-        <p className="text-indigo-600">
+        <p className="text-indigo-600 text-lg">
           CAPS • IEB • IB Cambridge • Group Classes • Rewrites • One-on-One
         </p>
       </div>
 
-      {/* Choose curriculum */}
-      <div className="max-w-5xl mx-auto text-center mb-6">
-        <h2 className="text-2xl font-bold text-indigo-700">Choose your curriculum</h2>
-      </div>
-
-      {/* Cards */}
-      <div className="grid gap-6 max-w-5xl mx-auto md:grid-cols-2">
+      {/* CARDS */}
+      <div className="grid gap-6 max-w-5xl mx-auto md:grid-cols-2 px-4">
         <Card
           title="Grade 12 CAPS Rewrite (Group)"
           desc="First group class FREE (once per learner)"
@@ -85,7 +81,8 @@ export default function MathTutoringLanding() {
           item="Grade 12 IB Cambridge Monthly Package"
         />
 
-        <div className="bg-white/90 rounded-2xl shadow-lg p-6 md:col-span-2 border-2 border-indigo-300">
+        {/* ONE-ON-ONE */}
+        <div className="bg-white rounded-2xl shadow-lg p-6 md:col-span-2 border-2 border-indigo-300">
           <h3 className="text-xl font-semibold text-indigo-800 mb-2">
             One-on-One (CAPS / IEB / IB)
           </h3>
@@ -98,16 +95,36 @@ export default function MathTutoringLanding() {
         </div>
       </div>
 
-      {/* Info */}
-      <div className="max-w-5xl mx-auto mt-16 bg-white/90 rounded-2xl shadow-lg p-8">
-        <h2 className="text-2xl font-bold text-indigo-700 mb-4">Important Information</h2>
-        <ul className="list-disc pl-5 text-gray-700 space-y-2">
-          <li>First group class is free (once per learner)</li>
-          <li>Group classes are billed monthly</li>
-          <li>One-on-one lessons require payment before booking</li>
-          <li>All lessons are live on Zoom</li>
-        </ul>
-      </div>
+      {/* FOOTER — VERY VISIBLE */}
+      <footer className="mt-20 bg-white border-t border-indigo-200">
+        <div className="max-w-5xl mx-auto py-10 px-4 text-center">
+          <p className="text-lg font-semibold mb-3">
+            📧 Email:{' '}
+            <a
+              href="mailto:info@learnwithpatience.com"
+              className="text-indigo-700 hover:underline"
+            >
+              info@learnwithpatience.com
+            </a>
+          </p>
+
+          <p className="text-lg font-semibold mb-3">
+            💬 WhatsApp:{' '}
+            <a
+              href="https://wa.me/27822630913"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-600 hover:underline"
+            >
+              082 263 0913
+            </a>
+          </p>
+
+          <p className="text-sm text-gray-500">
+            © {new Date().getFullYear()} Math Tutoring with Patience
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }
@@ -126,7 +143,7 @@ function Card({
   item: string;
 }) {
   return (
-    <div className="bg-white/90 rounded-2xl shadow-lg p-6">
+    <div className="bg-white rounded-2xl shadow-lg p-6">
       <h3 className="text-xl font-semibold text-indigo-700 mb-2">{title}</h3>
       <p className="text-gray-600 mb-2">{desc}</p>
       <p className="text-sm text-gray-500 mb-4">{price}</p>
@@ -157,11 +174,16 @@ function PayFastButton({
   label: string;
 }) {
   return (
-    <form method="POST" action="https://www.payfast.co.za/eng/process" target="_top">
+    <form
+      method="POST"
+      action="https://www.payfast.co.za/eng/process"
+      target="_top"
+    >
       <input type="hidden" name="merchant_id" value={PAYFAST_MERCHANT_ID} />
       <input type="hidden" name="merchant_key" value={PAYFAST_MERCHANT_KEY} />
       <input type="hidden" name="amount" value={amount} />
       <input type="hidden" name="item_name" value={item} />
+
       <button
         type="submit"
         className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-md"
