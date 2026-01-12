@@ -31,7 +31,7 @@ export default function MathTutoringLanding() {
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl font-extrabold text-indigo-700 mb-4"
         >
-          Math Tutoring
+        Math Tutoring
         </motion.h1>
         <p className="text-indigo-600">
           CAPS • IEB • IB Cambridge • Group Classes • Rewrites • One-on-One
