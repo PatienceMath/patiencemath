@@ -190,6 +190,49 @@ export default function MathTutoringLanding() {
         </ul>
       </div>
 
+      {/* Reviews Section */}
+      <div className="max-w-5xl mx-auto mt-16 bg-white/90 rounded-2xl shadow-lg p-8">
+        <h2 className="text-2xl font-bold text-indigo-700 mb-4">Student Reviews</h2>
+
+        {/* Sample Reviews */}
+        <div className="space-y-4 mb-6">
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <p className="text-gray-700">“Patience explains Maths in a way that actually makes sense. My marks improved a lot!”</p>
+            <p className="text-sm text-gray-500 mt-2">– Student</p>
+          </div>
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <p className="text-gray-700">“The small group classes really helped me ask questions and understand better.”</p>
+            <p className="text-sm text-gray-500 mt-2">– Grade 12 Learner</p>
+          </div>
+        </div>
+
+        {/* Leave a Review */}
+        <div>
+          <p className="font-medium text-indigo-700 mb-2">Leave a Review</p>
+
+          {/* Star Rating */}
+          <div className="flex mb-3">
+            {[1,2,3,4,5].map((star) => (
+              <span key={star} className="text-2xl cursor-pointer text-yellow-400">
+                ★
+              </span>
+            ))}
+          </div>
+
+          <textarea
+            placeholder="Write your review here..."
+            className="w-full p-3 border rounded-md mb-3"
+          />
+
+          <button
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-md"
+            onClick={() => alert('Thank you for your feedback! ⭐')}
+          >
+            Submit Review
+          </button>
+        </div>
+      </div>
+
       {/* Footer */}
       <footer className="max-w-5xl mx-auto mt-16 bg-white rounded-2xl shadow-lg p-8 text-center text-gray-800 border border-indigo-100">
         <p className="mb-3 text-lg font-medium">
