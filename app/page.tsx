@@ -262,7 +262,72 @@ export default function MathTutoringLanding() {
     </main>
   );
 }
+REVIEWS COMPONENT (UPGRADED)
+    : '0';
 
+  return (
+    <div className="max-w-5xl mx-auto mt-16 bg-white/90 rounded-2xl shadow-lg p-8">
+      <h2 className="text-2xl font-bold text-indigo-700 mb-4">Student Reviews</h2>
+
+      {/* Google Reviews Link */}
+      <div className="mb-6">
+        <button
+          onClick={() => window.open('https://g.page/r/YOUR-GOOGLE-REVIEW-LINK', '_blank')}
+          className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md"
+        >
+          Leave a Google Review ⭐
+        </button>
+      </div>
+
+      <p className="mb-4 text-lg">
+        ⭐ Average Rating: <span className="font-bold">{average}</span> ({reviews.length} reviews)
+      </p>
+
+      {/* Stars */}
+      <div className="flex gap-2 mb-4">
+        {[1, 2, 3, 4, 5].map((star) => (
+          <button
+            key={star}
+            onClick={() => setRating(star)}
+            className={`text-3xl ${star <= rating ? 'text-yellow-400' : 'text-gray-300'}`}
+          >
+            ★
+          </button>
+        ))}
+      </div>
+
+      {/* Text */}
+      <textarea
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Write your review..."
+        className="w-full p-3 border rounded-md mb-3"
+      />
+
+      <button
+        onClick={submitReview}
+        className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-md mb-6"
+      >
+        Submit Review
+      </button>
+
+      {/* Display Reviews */}
+      <div className="space-y-4">
+        {reviews.map((r, i) => (
+          <div key={i} className="bg-gray-100 p-4 rounded-lg">
+            <div className="text-yellow-400 mb-1">
+              {'★'.repeat(r.rating)}{'☆'.repeat(5 - r.rating)}
+            </div>
+            <p className="text-gray-700">{r.text}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* NOTE FOR FUTURE DATABASE */}
+      <p className="text-xs text-gray-400 mt-6">
+        *Reviews currently saved per device. Can be upgraded to a live database (Firebase/Supabase).
+      </p>
+    </div>
 function Card({
   title,
   desc,
