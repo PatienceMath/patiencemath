@@ -64,6 +64,55 @@ export default function MathTutoringLanding() {
         </p>
       </div>
 
+      {/* One-on-One Packages (moved to top) */}
+      <div className="max-w-5xl mx-auto mb-10 bg-white/90 rounded-2xl shadow-lg p-8 border-2 border-indigo-300">
+        <h3 className="text-2xl font-semibold text-indigo-800 mb-3">One-on-One Tutoring (All Grades)</h3>
+        <p className="text-gray-600 mb-6">Flexible options — book per hour or choose a monthly package</p>
+
+        {/* 1 Hour */}
+        <div className="mb-5">
+          <p className="font-medium text-indigo-700 mb-2">1 Hour Session — R250</p>
+          <button
+            className="w-full mb-2 bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md"
+            onClick={() => window.open('https://scheduler.zoom.us/patience-mokwena/math-lessons', '_blank')}
+          >
+            Schedule 1 Hour
+          </button>
+          <PayFastButton amount="250.00" item="One-on-One 1 Hour" label="Pay R250" />
+        </div>
+
+        {/* 4 Hours */}
+        <div className="mb-5">
+          <p className="font-medium text-indigo-700 mb-2">4 Hours Monthly Package — R1000 (1 lesson per week)</p>
+          <button
+            className="w-full mb-2 bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md"
+            onClick={() => window.open('https://scheduler.zoom.us/patience-mokwena/math-lessons', '_blank')}
+          >
+            Schedule (4 Hours)
+          </button>
+          <PayFastButton amount="1000.00" item="One-on-One 4 Hour Package" label="Pay R1000" />
+        </div>
+
+        {/* 8 Hours */}
+        <div className="mb-5">
+          <p className="font-medium text-indigo-700 mb-2">8 Hours Monthly Package — R1900 (2 lessons per week)</p>
+          <button
+            className="w-full mb-2 bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md"
+            onClick={() => window.open('https://scheduler.zoom.us/patience-mokwena/math-lessons', '_blank')}
+          >
+            Schedule (8 Hours)
+          </button>
+          <PayFastButton amount="1900.00" item="One-on-One 8 Hour Package" label="Pay R1900" />
+        </div>
+
+        <button
+          className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-md"
+          onClick={() => window.open('https://wa.me/27813454248', '_blank')}
+        >
+          Chat on WhatsApp
+        </button>
+      </div>
+
       {/* Choose curriculum */}
       <div className="max-w-5xl mx-auto text-center mb-6">
         <h2 className="text-2xl font-bold text-indigo-700">Choose your curriculum</h2>
@@ -111,19 +160,7 @@ export default function MathTutoringLanding() {
           item="Grade 12 IB Cambridge Monthly Package"
         />
 
-        {/* One-on-One */}
-        <div className="bg-white/90 rounded-2xl shadow-lg p-6 md:col-span-2 border-2 border-indigo-300">
-          <h3 className="text-xl font-semibold text-indigo-800 mb-2">
-            One-on-One Tutoring (All Grades)
-          </h3>
-          <p className="text-gray-600 mb-4">R250 per hour • No free trial</p>
-          <PayFastButton
-            amount="250.00"
-            item="One-on-One Math Tutoring"
-            label="Schedule & Pay R250"
-          />
         </div>
-      </div>
 
       {/* Pricing Explained */}
       <div className="max-w-5xl mx-auto mt-16 bg-white/90 rounded-2xl shadow-lg p-8">
