@@ -1,3 +1,4 @@
+import Image from "next/image";
 'use client';
 
 import React from 'react';
@@ -62,7 +63,19 @@ export default function Dashboard() {
     </motion.div>
   );
 
-  return (
+  return (<div className="text-center mb-6">
+  <Image
+    src="/logo LWP.png"
+    alt="Learn with Patience Logo"
+    width={180}
+    height={180}
+    className="mx-auto mb-4"
+  />
+
+  <h1 className="text-4xl font-bold text-indigo-700">
+    Math Tutoring with Patience
+  </h1>
+</div>
     <main className="min-h-screen bg-gradient-to-br from-indigo-100 to-blue-100 p-6">
       <div className="max-w-5xl mx-auto">
 
